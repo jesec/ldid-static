@@ -3,6 +3,8 @@
 
 FROM alpine
 
+ARG ref=master
+
 RUN apk add --no-cache \
     build-base \
     git \
@@ -13,7 +15,7 @@ RUN apk add --no-cache \
 
 WORKDIR /root
 
-RUN git clone git://git.saurik.com/ldid.git
+RUN git clone --depth 1 --branch $ref git://git.saurik.com/ldid.git
 
 WORKDIR /root/ldid
 
