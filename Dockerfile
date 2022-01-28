@@ -19,4 +19,4 @@ WORKDIR /root/ldid
 
 RUN g++ -pipe -o ldid ldid.cpp -I. -x c lookup2.c -lcrypto -lplist-2.0 -Os -fwhole-program -flto -s -static
 
-# binary: /root/ldid/ldid
+ENTRYPOINT ["/root/ldid/ldid"]
